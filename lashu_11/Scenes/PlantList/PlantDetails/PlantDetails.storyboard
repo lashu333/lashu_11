@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="59" width="393" height="793"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H9v-rf-tbc">
-                                        <rect key="frame" x="11" y="354" width="374" height="20.333333333333343"/>
+                                        <rect key="frame" x="11" y="354" width="374" height="20.333333333333314"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -41,15 +41,34 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jCc-1o-nhm">
+                                        <rect key="frame" x="19" y="37" width="75" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="HqX-R2-7TA"/>
+                                            <constraint firstAttribute="width" constant="75" id="qXr-fb-ezL"/>
+                                        </constraints>
+                                        <color key="tintColor" red="0.20392156859999999" green="0.010576105440000001" blue="0.85882352939999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="back">
+                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="17"/>
+                                            <color key="baseForegroundColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="0.70999999999999996" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="didTapBackButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="GKN-tx-CS3"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="H9v-rf-tbc" firstAttribute="top" secondItem="mXc-e9-nW8" secondAttribute="bottom" constant="60" id="1I7-oS-3EU"/>
+                                    <constraint firstItem="jCc-1o-nhm" firstAttribute="leading" secondItem="aav-BM-yHL" secondAttribute="leading" constant="19" id="1Yg-0T-HoG"/>
+                                    <constraint firstItem="jCc-1o-nhm" firstAttribute="leading" secondItem="aav-BM-yHL" secondAttribute="leadingMargin" constant="11" id="6EC-Mk-hj2"/>
                                     <constraint firstItem="mXc-e9-nW8" firstAttribute="top" secondItem="aav-BM-yHL" secondAttribute="top" constant="8" id="A0i-jN-vad"/>
                                     <constraint firstItem="mXc-e9-nW8" firstAttribute="centerX" secondItem="H9v-rf-tbc" secondAttribute="centerX" id="Kib-Ad-n8N"/>
                                     <constraint firstItem="mXc-e9-nW8" firstAttribute="leading" secondItem="aav-BM-yHL" secondAttribute="leading" constant="11" id="L8a-U1-Utp"/>
                                     <constraint firstItem="H9v-rf-tbc" firstAttribute="leading" secondItem="aav-BM-yHL" secondAttribute="leading" constant="11" id="MYt-ka-IDA"/>
                                     <constraint firstItem="mXc-e9-nW8" firstAttribute="top" secondItem="m7g-zg-LIG" secondAttribute="bottom" constant="-338" id="ecx-2a-hSA"/>
+                                    <constraint firstItem="jCc-1o-nhm" firstAttribute="top" secondItem="aav-BM-yHL" secondAttribute="top" constant="37" id="nVX-Vp-mkn"/>
                                     <constraint firstItem="mXc-e9-nW8" firstAttribute="centerX" secondItem="m7g-zg-LIG" secondAttribute="centerX" id="xz6-Gi-Aum"/>
                                 </constraints>
                             </view>
@@ -57,9 +76,9 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="aav-BM-yHL" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="2sa-Tl-q8E"/>
-                            <constraint firstAttribute="trailing" secondItem="aav-BM-yHL" secondAttribute="trailing" id="ZVs-Km-4VA"/>
+                            <constraint firstItem="aav-BM-yHL" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="Uiv-9B-dlC"/>
                             <constraint firstItem="aav-BM-yHL" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="b8b-se-6BV"/>
+                            <constraint firstItem="aav-BM-yHL" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="dbg-yF-H7d"/>
                             <constraint firstAttribute="bottom" secondItem="aav-BM-yHL" secondAttribute="bottom" id="zcp-oz-aZO"/>
                         </constraints>
                     </view>

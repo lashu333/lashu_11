@@ -18,6 +18,7 @@ class PlantListViewController: UIViewController {
     // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.interactivePopGestureRecognizer?.isEnabled = false
         setUpUI()
     }
     
@@ -50,7 +51,7 @@ class PlantListViewController: UIViewController {
     private func setupBackgroundAnimation() {
         let originalColor = view.backgroundColor
         
-        UIView.animate(withDuration: 0.3, delay: 0, options: [.curveEaseOut], animations: {
+        UIView.animate(withDuration: 0.2, delay: 0, options: [.curveEaseInOut], animations: {
             self.recentlyOpenedPlantImage.layer.cornerRadius = self.recentlyOpenedPlantImage.frame.height / 5.6
             self.recentlyOpenedPlantImage.transform = .identity
         }) { _ in
@@ -120,10 +121,10 @@ extension PlantListViewController: UITableViewDataSource {
     }
     
     private func animateCellAppearance(_ cell: UITableViewCell, at indexPath: IndexPath) {
-        cell.alpha = 0
+        cell.alpha = 0.3
         let originalColor = cell.backgroundColor
         cell.backgroundColor = .clear
-        cell.transform = CGAffineTransform(translationX: 0, y: 50)
+        cell.transform = CGAffineTransform(translationX: 0, y: 12)
         
         UIView.animate(withDuration: 0.3, delay: 0.02 * Double(indexPath.row), options: [.curveEaseOut], animations: {
             cell.alpha = 1

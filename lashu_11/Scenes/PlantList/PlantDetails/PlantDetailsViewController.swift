@@ -27,7 +27,10 @@ class PlantDetailsViewController: UIViewController {
         }
         // Do any additional setup after loading the view.
     }
-    
+    //MARK: - Actions
+    @IBAction func didTapBackButton(_ sender: UIButton) {
+        navigationController?.popViewController(animated: true)
+    }
     
     /*
      // MARK: - Navigation
