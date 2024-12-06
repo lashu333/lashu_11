@@ -15,7 +15,7 @@ class PlantTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        print("Outlets initialized: \(plantName != nil), \(plantDescription != nil), \(plantImage != nil)")
+        setUpCell()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -23,5 +23,32 @@ class PlantTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
+    private func setUpCell() {
+        plantName.alpha = 0
+        plantDescription.alpha = 0
+        plantImage.layer.cornerRadius = plantImage.frame.height / 2.3
+        plantImage.layer.borderWidth = plantImage.frame.height / 10
+        let blurEffect = UIBlurEffect(style: .light)
+        let blurView = UIVisualEffectView(effect: blurEffect)
+        blurView.frame = plantImage.bounds
+        blurView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        plantImage.addSubview(blurView)
+        UIView.animate(withDuration: 0.5) {
+            blurView.alpha = 0
+        }
+        plantImage.transform = .init(scaleX: 0.8, y: 0.8)
+        if let borderColor = UIColor(named: "borderColor") {
+            plantImage.layer.borderColor = borderColor.cgColor
+        }
+        UIView.animate(withDuration: 0.3, delay: 0.15, options: .curveEaseOut, animations: {
+            self.plantName.alpha = 1
+            self.plantImage.layer.cornerRadius = self.plantImage.frame.height / 5
+        }, completion: nil)
+        UIView.animate(withDuration: 0.4, delay: 0, options: .curveEaseOut, animations: {
+            self.plantDescription.alpha = 1
+            self.plantImage.layer.borderWidth = self.plantImage.frame.height / 15
+            self.plantImage.transform = .identity
+
+        }, completion: nil)
+    }
 }
