@@ -12,11 +12,15 @@ class PlantListViewController: UIViewController {
     @IBOutlet weak var recentlyOpenedPlantImage: UIImageView!
     @IBOutlet weak var plantTableView: UITableView!
     // MARK: Properties
-    let plants: [Plant] = [Plant(name: "leaf", image: UIImage(named: "leaf") , description: "very green leaf"), Plant(name: "tree", image: UIImage(named: "tree"), description: "pretty long tree"), Plant(name: "flower", image:UIImage(named: "flower") , description: "pretty pretty flower")]
+    let plants = PlantDataSource.shared.plants
     // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        recentlyOpenedPlantImage.image = plants[0].image
         // Do any additional setup after loading the view.
+        if 541 > plants.count * 110{
+            plantTableView.isScrollEnabled = false
+        }
         plantTableView.dataSource = self
         plantTableView.delegate = self
         plantTableView.register(UINib(nibName: "PlantTableViewCell", bundle: nil), forCellReuseIdentifier: "PlantCellViewID")
@@ -53,6 +57,7 @@ extension PlantListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let plant = plants[indexPath.row]
         moveToDetailedView(plant: plant)
+        plantTableView.deselectRow(at: indexPath as IndexPath, animated: true)
     }
 }
 extension PlantListViewController: PlantDetailsDelegate{
