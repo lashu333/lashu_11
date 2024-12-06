@@ -40,11 +40,11 @@ class PlantTableViewCell: UITableViewCell {
         if let borderColor = UIColor(named: "borderColor") {
             plantImage.layer.borderColor = borderColor.cgColor
         }
-        UIView.animate(withDuration: 0.3, delay: 0.15, options: .curveEaseOut, animations: {
+        UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseOut, animations: {
             self.plantName.alpha = 1
             self.plantImage.layer.cornerRadius = self.plantImage.frame.height / 5
         }, completion: nil)
-        UIView.animate(withDuration: 0.4, delay: 0, options: .curveEaseOut, animations: {
+        UIView.animate(withDuration: 0.2, delay: 0, options: .curveEaseOut, animations: {
             self.plantDescription.alpha = 1
             self.plantImage.layer.borderWidth = self.plantImage.frame.height / 15
             self.plantImage.transform = .identity

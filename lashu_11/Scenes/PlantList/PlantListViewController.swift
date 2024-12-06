@@ -125,7 +125,7 @@ extension PlantListViewController: UITableViewDataSource {
         cell.backgroundColor = .clear
         cell.transform = CGAffineTransform(translationX: 0, y: 50)
         
-        UIView.animate(withDuration: 0.3, delay: 0.05 * Double(indexPath.row), options: [.curveEaseOut], animations: {
+        UIView.animate(withDuration: 0.3, delay: 0.02 * Double(indexPath.row), options: [.curveEaseOut], animations: {
             cell.alpha = 1
             cell.backgroundColor = originalColor
             cell.transform = .identity
