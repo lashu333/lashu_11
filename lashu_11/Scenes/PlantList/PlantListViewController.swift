@@ -11,10 +11,9 @@ class PlantListViewController: UIViewController {
     // MARK: Outlets
     @IBOutlet weak var recentlyOpenedPlantImage: UIImageView!
     @IBOutlet weak var plantTableView: UITableView!
-    
+    @IBOutlet weak var progressView: UIProgressView!
     // MARK: Properties
     let plants = PlantDataSource.shared.plants
-    
     // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,12 +23,15 @@ class PlantListViewController: UIViewController {
     
     // MARK: Functions
     private func setUpUI() {
+        moveProgress()
         setupNavigationBar()
         setupRecentlyOpenedImage()
         setupTableView()
         setupBackgroundAnimation()
     }
-    
+    private func moveProgress(){
+        progressView.progress = Float(plantTableView.contentOffset.y / Double((110 * plants.count))) * 4
+    }
     private func setupNavigationBar() {
         navigationController?.navigationBar.isHidden = true
     }
@@ -139,6 +141,8 @@ extension PlantListViewController: UITableViewDelegate {
         moveToDetailedView(plant: plant)
         tableView.deselectRow(at: indexPath, animated: true)
     }
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        moveProgress()    }
 }
 extension PlantListViewController: PlantDetailsDelegate {
     func didSelectPlant(_ plant: Plant) {

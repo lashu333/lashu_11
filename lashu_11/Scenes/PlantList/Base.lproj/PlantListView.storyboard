@@ -53,23 +53,29 @@
                                 <constraints>
                                     <constraint firstItem="zrh-Pu-cxW" firstAttribute="leading" secondItem="DGs-q4-nXS" secondAttribute="leading" constant="16" id="FDv-IP-xUu"/>
                                     <constraint firstItem="9T3-ca-gn6" firstAttribute="leading" secondItem="DGs-q4-nXS" secondAttribute="leading" constant="94.666666666666686" id="aiQ-NZ-G6X"/>
-                                    <constraint firstAttribute="height" constant="714" id="k4O-xD-uNP"/>
                                 </constraints>
                             </stackView>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="p6q-vX-FeD">
+                                <rect key="frame" x="16" y="836" width="370" height="4"/>
+                                <color key="backgroundColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="0.070000000000000007" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="0.84574298469999998" green="0.93420461939999999" blue="0.73174426020000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </progressView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="DGs-q4-nXS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="1Ue-nW-0bi"/>
-                            <constraint firstItem="DGs-q4-nXS" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="2kD-42-351"/>
+                            <constraint firstItem="p6q-vX-FeD" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="4OZ-cc-lVQ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="DGs-q4-nXS" secondAttribute="trailing" id="HOT-kQ-SDR"/>
-                            <constraint firstItem="DGs-q4-nXS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Sob-Ss-N98"/>
-                            <constraint firstItem="DGs-q4-nXS" firstAttribute="top" relation="lessThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="top" id="iM5-WL-N1O"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="p6q-vX-FeD" secondAttribute="trailing" constant="16" id="dZY-YJ-LoA"/>
+                            <constraint firstItem="DGs-q4-nXS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="iM5-WL-N1O"/>
+                            <constraint firstItem="p6q-vX-FeD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="l3T-GT-zsu"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="yoo-em-brB"/>
                     <connections>
                         <outlet property="plantTableView" destination="zrh-Pu-cxW" id="zs4-Yn-Q4V"/>
+                        <outlet property="progressView" destination="p6q-vX-FeD" id="rTZ-tw-idI"/>
                         <outlet property="recentlyOpenedPlantImage" destination="vOB-tQ-Ybn" id="sOF-wZ-Vtw"/>
                     </connections>
                 </viewController>

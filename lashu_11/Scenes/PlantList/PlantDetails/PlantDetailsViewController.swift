@@ -17,6 +17,9 @@ class PlantDetailsViewController: UIViewController {
     var plant: Plant?
     override func viewDidLoad() {
         super.viewDidLoad()
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(changeAspect))
+        plantImage.addGestureRecognizer(tapGestureRecognizer)
+        plantImage.isUserInteractionEnabled = true
         if let plant = plant {
             plantName.text = plant.name
             plantDescription.text = plant.description
@@ -41,7 +44,14 @@ class PlantDetailsViewController: UIViewController {
      // Pass the selected object to the new view controller.
      }
      */
-    
+    // MARK: Methods
+    @objc func changeAspect(){
+        if self.plantImage.contentMode == .scaleAspectFill {
+            self.plantImage.contentMode = .scaleAspectFit
+        } else {
+            self.plantImage.contentMode = .scaleAspectFill
+        }
+    }
 }
 protocol PlantDetailsDelegate: AnyObject {
     func didSelectPlant(_ plant: Plant)
