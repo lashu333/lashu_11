@@ -26,12 +26,15 @@ class PlantDetailsViewController: UIViewController {
             if let image = plant.image {
                 plantImage.image = image
             }
-            delegate?.didSelectPlant(plant)
+            
         }
         // Do any additional setup after loading the view.
     }
     //MARK: - Actions
     @IBAction func didTapBackButton(_ sender: UIButton) {
+        if let plant = plant {
+            delegate?.didSelectPlant(plant)
+        }
         navigationController?.popViewController(animated: true)
     }
     
