@@ -15,5 +15,4 @@ struct Plant{
         self.image = image
         self.description = description
     }
-    
 }

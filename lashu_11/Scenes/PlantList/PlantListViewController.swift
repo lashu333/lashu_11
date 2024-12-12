@@ -161,10 +161,4 @@ extension PlantListViewController: PlantDetailsDelegate {
         }
     }
 }
-extension PlantTableViewCell {
-    func configure(with plant: Plant) {
-        plantName?.text = plant.name
-        plantDescription?.text = plant.description
-        plantImage?.image = plant.image
-    }
-}
+

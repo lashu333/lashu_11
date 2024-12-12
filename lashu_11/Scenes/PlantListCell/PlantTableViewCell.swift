@@ -23,6 +23,11 @@ class PlantTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    func configure(with plant: Plant) {
+        plantName?.text = plant.name
+        plantDescription?.text = plant.description
+        plantImage?.image = plant.image
+    }
     private func setUpCell() {
         plantName.alpha = 0
         plantDescription.alpha = 0
